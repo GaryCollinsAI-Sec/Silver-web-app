@@ -1,585 +1,609 @@
-# Silver Dragons Academy Web Platform
 
-**Silver Dragons Academy** is a community-focused martial arts and education organization built around character development, confidence, discipline, fitness, and practical life skills.
+<div align="center">
 
-> **Building Character. Developing Confidence. Preparing for Life.**
+  <h1>Silver Dragons Academy Web Platform</h1>
 
-This repository contains the web platform for Silver Dragons Academy, including the public-facing website and backend services supporting the platform's AI assistant, **Silvia**.
+  <p><strong>React · TypeScript · Python · Django REST Framework</strong></p>
 
----
+  <p>
+    A full-stack website for Silver Dragons Academy, featuring a custom
+    chatbot integration and a security-conscious REST API.
+  </p>
 
-## 📌 Project Overview
+  <p><em>Building Character. Developing Confidence. Preparing for Life.</em></p>
 
-The Silver Dragons Academy web platform is being developed as a practical full-stack application while also serving as a learning and portfolio project focused on:
+</div>
 
-* Full-stack web development
-* Python and Django backend development
-* API development
-* Software testing
-* Application security
-* AI application security
-* Secure software design
-* Cloud deployment
-* Long-term application maintenance
+<hr>
 
-The project is intentionally being developed incrementally, with security and testing considered throughout the development lifecycle rather than added only after the application is completed.
+<h2>Project Overview</h2>
 
----
+<p>
+  Silver Dragons Academy is a community-focused martial arts and education
+  organization centered on character development, confidence, discipline,
+  fitness, and practical life skills.
+</p>
 
-## 🏗️ Architecture
+<p>
+  This repository contains the Silver Dragons Academy website and its
+  supporting backend API, including <strong>Silvia</strong>, a virtual
+  assistant designed to answer questions about the academy.
+</p>
 
-The current platform is divided into two primary components:
+<p>
+  The platform combines a React-based frontend with a Python backend
+  implemented using Django and Django REST Framework. It demonstrates
+  practical full-stack development, REST API integration, chatbot development,
+  software testing, and application security considerations.
+</p>
 
-```text
+<p>The current project focuses on:</p>
+
+<ul>
+  <li>Frontend development with React and TypeScript</li>
+  <li>Website styling with Tailwind CSS</li>
+  <li>Python backend development using Django</li>
+  <li>REST API development with Django REST Framework</li>
+  <li>Silvia chatbot integration</li>
+  <li>Frontend-to-backend communication</li>
+  <li>Input validation and error handling</li>
+  <li>Application security and software testing</li>
+</ul>
+
+<h2>Architecture</h2>
+
+<pre>
 Silver Dragons Academy Web Platform
 │
-├── Frontend
+├── Frontend Website
 │   ├── React
 │   ├── TypeScript
 │   ├── Vite
-│   └── Tailwind CSS
+│   ├── Tailwind CSS
+│   └── Silvia Chat Interface
 │
-└── Backend
+└── Backend API
     ├── Python
     ├── Django
-    └── REST-style API services
-```
+    ├── Django REST Framework
+    └── Silvia Chat API
+</pre>
 
-### Frontend
+<h3>Frontend</h3>
 
-The frontend provides the public-facing Silver Dragons Academy website.
+<p>
+  The frontend provides the public-facing website and interactive chatbot
+  interface.
+</p>
 
-**Technologies:**
+<p><strong>Technologies:</strong></p>
 
-* React
-* TypeScript
-* Vite
-* Tailwind CSS
+<ul>
+  <li>React</li>
+  <li>TypeScript</li>
+  <li>Vite</li>
+  <li>Tailwind CSS</li>
+</ul>
 
-The frontend is responsible for the user interface, navigation, academy information, program information, and communication with backend services.
+<p>The frontend is responsible for:</p>
 
-### Backend
+<ul>
+  <li>Displaying academy information and website content</li>
+  <li>Providing navigation and program information</li>
+  <li>Rendering the Silvia chatbot interface</li>
+  <li>Sending chatbot messages to the backend API</li>
+  <li>Displaying chatbot responses to visitors</li>
+</ul>
 
-The backend is being developed using:
+<h3>Backend</h3>
 
-* **Python**
-* **Django**
+<p>
+  The backend uses Python, Django, and Django REST Framework to provide
+  server-side API functionality.
+</p>
 
-The Django backend provides the server-side application layer and API functionality used by the frontend and AI assistant.
+<p>The backend is responsible for:</p>
 
-Backend development is currently focused on creating a maintainable foundation that can later support additional application functionality.
+<ul>
+  <li>Exposing API endpoints</li>
+  <li>Processing chatbot requests</li>
+  <li>Returning JSON responses</li>
+  <li>Supporting frontend-to-backend integration</li>
+  <li>Providing a foundation for maintainable backend development</li>
+</ul>
 
----
+<h2>Silvia Chatbot</h2>
 
-## 🤖 Silvia AI Assistant
+<p>
+  <strong>Silvia</strong> is the virtual assistant for Silver Dragons Academy.
+  It provides visitors with a conversational interface for asking questions
+  about the academy, Taekwondo, training benefits, and other supported topics.
+</p>
 
-**Silvia** is the virtual assistant for Silver Dragons Academy.
+<p>
+  Silvia is integrated into the website through a custom REST API built with
+  Python, Django, and Django REST Framework.
+</p>
 
-Silvia is designed to answer questions about the academy using controlled application knowledge rather than unrestricted access to private systems.
+<h3>Chatbot Features</h3>
 
-Current areas of focus include:
+<ul>
+  <li>Interactive chatbot interface</li>
+  <li>HTTP-based communication with the Django backend</li>
+  <li>JSON request and response handling</li>
+  <li>Academy-focused question answering</li>
+  <li>Handling of unsupported questions</li>
+  <li>Defined chatbot instructions and response boundaries</li>
+</ul>
 
-* Academy information
-* Taekwondo
-* Training benefits
-* General program information
-* Appropriate user questions
-* Safe handling of unknown questions
+<h3>Chatbot Architecture</h3>
 
-Silvia is also being used as a practical environment for studying **AI application security**.
+<pre>
+Website Visitor
+      │
+      ▼
+React Chat Interface
+      │
+      │ POST /api/chat
+      ▼
+Django REST Framework
+      │
+      ▼
+Silvia Chat Processing
+      │
+      ▼
+JSON Response
+      │
+      ▼
+React Chat Interface
+      │
+      ▼
+Visitor Receives Response
+</pre>
 
-### AI Security Considerations
+<p>
+  The frontend sends the visitor's message to the Django API. The backend
+  processes the request and returns a response that the frontend displays
+  in the conversation.
+</p>
 
-The application is being designed to account for risks such as:
+<h2>API Endpoints</h2>
 
-* Prompt injection
-* Instruction disclosure
-* Unauthorized access to internal information
-* Fabrication of information
-* Improper handling of unknown questions
-* Attempts to access private application data
-* Excessive or malformed requests
+<table>
+  <thead>
+    <tr>
+      <th>Method</th>
+      <th>Endpoint</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>GET</code></td>
+      <td><code>/api/health</code></td>
+      <td>Checks API health.</td>
+    </tr>
+    <tr>
+      <td><code>POST</code></td>
+      <td><code>/api/chat</code></td>
+      <td>Processes chatbot messages.</td>
+    </tr>
+  </tbody>
+</table>
 
-The goal is not simply to make an AI assistant that works, but to understand how an AI-enabled application can be tested and secured.
+<h3>Example Chat Request</h3>
 
----
+<pre>
+POST /api/chat
+Content-Type: application/json
 
-## 🔐 Application Security
+{
+  "message": "What is Taekwondo?"
+}
+</pre>
 
-Security is a major development consideration for this project.
+<p>
+  The API accepts a chatbot message and returns a response in JSON format.
+  The exact response structure is determined by the current backend
+  implementation.
+</p>
 
-The application is being developed with an application-security mindset that includes:
+<h3>Frontend API Configuration</h3>
 
-* Input validation
-* Request validation
-* API security
-* Error handling
-* Access control considerations
-* Secure configuration
-* CORS configuration
-* Security headers
-* Rate limiting
-* Request-size limitations
-* AI security testing
-* Negative testing
-* Automated security-oriented tests
+<p>
+  The frontend uses an environment variable to configure the chatbot API URL:
+</p>
 
-The project is also being used to learn how vulnerabilities can be identified through testing and how defensive controls can be incorporated into the application.
+<pre>
+const API_URL =
+  import.meta.env.VITE_SILVIA_API_URL ||
+  "http://127.0.0.1:8000/api/chat";
+</pre>
 
----
+<p>
+  For local development, the environment variable can be configured as follows:
+</p>
 
-## 🧪 Software Testing
+<pre>
+VITE_SILVIA_API_URL=http://127.0.0.1:8000/api/chat
+</pre>
 
-Testing is an important part of the development process.
+<p>
+  The local URL is a development fallback. Environment-specific configuration
+  allows the frontend endpoint to be changed without modifying the application
+  source code.
+</p>
 
-Rather than only testing whether expected requests work, the project also examines how the application behaves when it receives unexpected or malicious input.
+<h2>Application Security</h2>
 
-Testing areas include:
+<p>
+  Application security is an important consideration in the development of
+  the website and chatbot. The project explores how web applications should
+  handle untrusted input, communicate with backend services, and maintain
+  appropriate information boundaries.
+</p>
 
-* Valid requests
-* Invalid requests
-* Malformed input
-* Unexpected request structures
-* Unsupported HTTP methods
-* Validation failures
-* API error handling
-* Security controls
-* AI prompt-injection scenarios
-* Unauthorized information requests
-* Boundary conditions
+<h3>Security Considerations</h3>
 
-The backend uses Python/Django testing tools as development progresses.
+<ul>
+  <li><strong>Input validation:</strong> Handle missing, empty, malformed, or unexpected input.</li>
+  <li><strong>API request handling:</strong> Process requests using appropriate HTTP methods and data formats.</li>
+  <li><strong>Error handling:</strong> Avoid unnecessarily exposing internal implementation details.</li>
+  <li><strong>CORS configuration:</strong> Configure permitted frontend origins for local development.</li>
+  <li><strong>Request abuse prevention:</strong> Evaluate rate limiting and request-size restrictions.</li>
+  <li><strong>Chatbot security:</strong> Evaluate attempts to override instructions or obtain internal information.</li>
+  <li><strong>Information boundaries:</strong> Avoid exposing private information or inventing unsupported academy details.</li>
+  <li><strong>Configuration security:</strong> Keep secrets and sensitive configuration out of source control.</li>
+</ul>
 
-Typical Django development commands include:
+<p>
+  These items describe security considerations for the project. Individual
+  controls should be verified against the current Django implementation
+  before being described as implemented protections.
+</p>
 
-```bash
+<h3>Chatbot Security Boundaries</h3>
+
+<p>
+  Silvia is designed to maintain defined behavioral boundaries when responding
+  to user messages. Security testing can evaluate scenarios such as:
+</p>
+
+<ul>
+  <li>Attempts to reveal internal chatbot instructions</li>
+  <li>Prompt-injection attempts</li>
+  <li>Requests for private or administrative information</li>
+  <li>Requests for unsupported academy information</li>
+  <li>Malformed or unexpected API requests</li>
+  <li>Questions outside the chatbot's supported knowledge</li>
+</ul>
+
+<p>
+  The objective is to evaluate the chatbot under normal and adversarial
+  conditions and improve its reliability through testing.
+</p>
+
+<h2>Software Testing</h2>
+
+<p>
+  Testing helps verify expected application behavior and identify regressions
+  as the website and backend evolve.
+</p>
+
+<p>Relevant testing areas include:</p>
+
+<ul>
+  <li>API endpoint behavior</li>
+  <li>Valid and invalid chatbot requests</li>
+  <li>Frontend-to-backend integration</li>
+  <li>Request validation</li>
+  <li>HTTP method handling</li>
+  <li>Error responses</li>
+  <li>Chatbot response behavior</li>
+  <li>Security-related input scenarios</li>
+</ul>
+
+<h3>Django System Checks</h3>
+
+<pre>
 python manage.py check
-```
+</pre>
 
-Run the development server:
+<h3>Start the Backend</h3>
 
-```bash
+<pre>
 python manage.py runserver
-```
+</pre>
 
-Run the test suite:
+<h3>Run Django Tests</h3>
 
-```bash
+<pre>
 python manage.py test
-```
+</pre>
 
----
+<p>
+  These commands support local development. Test coverage and passing results
+  should reflect the tests that actually exist and run successfully in the
+  current Django project.
+</p>
 
-## 📁 Project Structure
+<h2>Technology Stack</h2>
 
-The repository is organized around the web frontend and Django backend.
+<h3>Frontend</h3>
 
-A simplified structure is:
+<ul>
+  <li>React</li>
+  <li>TypeScript</li>
+  <li>Vite</li>
+  <li>Tailwind CSS</li>
+</ul>
 
-```text
+<h3>Backend</h3>
+
+<ul>
+  <li>Python</li>
+  <li>Django</li>
+  <li>Django REST Framework</li>
+</ul>
+
+<h3>Development Tools</h3>
+
+<ul>
+  <li>Git</li>
+  <li>GitHub</li>
+  <li>Node.js and npm</li>
+  <li>Python and pip</li>
+  <li>Django development and testing tools</li>
+</ul>
+
+<h2>Project Structure</h2>
+
+<p>
+  The following is an illustrative directory structure. Adjust directory
+  names to match the actual repository.
+</p>
+
+<pre>
 SilverDragonsAcademyWeb/
 │
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   │   └── images/
-│   │       └── virtual-assistant.jpg
-│   ├── package.json
-│   └── vite.config.*
+├── src/
+│   ├── components/
+│   ├── pages/
+│   └── ...
+│
+├── public/
+│   └── images/
+│       └── virtual-assistant.jpg
+│
+├── package.json
+├── vite.config.ts
 │
 ├── silver-dragons-api-django/
 │   ├── manage.py
 │   ├── config/
-│   │   ├── settings.py
-│   │   ├── urls.py
-│   │   ├── wsgi.py
-│   │   └── ...
-│   └── ...
+│   ├── silvia/
+│   └── requirements.txt
 │
 └── README.md
-```
+</pre>
 
-> The exact directory structure may change as development continues.
+<p>
+  The frontend source directory and Django project directory should reflect
+  the actual locations in your repository.
+</p>
 
----
+<h2>Getting Started</h2>
 
-## 🌐 Development Environment
+<h3>Prerequisites</h3>
 
-### Frontend
+<ul>
+  <li>Python</li>
+  <li>Node.js and npm</li>
+  <li>Git</li>
+</ul>
 
-The frontend development server currently runs on:
+<h3>1. Start the Django Backend</h3>
 
-```text
-http://localhost:5173
-```
+<p>Open a terminal in the Django backend directory:</p>
 
-### Django Backend
-
-The Django development server uses the standard Django development address:
-
-```text
-http://127.0.0.1:8000
-```
-
-The frontend communicates with the backend through API requests.
-
----
-
-## 🔌 API
-
-The Django backend provides the server-side API layer for the web platform.
-
-The API architecture is being developed around endpoints for services such as:
-
-```text
-/api/health
-/api/chat
-```
-
-The API layer is being designed with validation, controlled responses, and security testing in mind.
-
-As development continues, additional endpoints may be added for future platform functionality.
-
----
-
-## 🛡️ Security Development Philosophy
-
-This project follows a simple principle:
-
-> **Security should be part of the development process, not an afterthought.**
-
-The application is being developed with the expectation that users may submit:
-
-* Invalid data
-* Unexpected input
-* Malicious input
-* Attempts to bypass application rules
-* Attempts to manipulate the AI assistant
-* Requests for information they should not receive
-
-Testing these scenarios helps identify weaknesses before the application is deployed.
-
-This project therefore serves as both a production-oriented application and a practical environment for learning application security.
-
----
-
-## ☁️ Cloud Deployment
-
-Cloud deployment is part of the project's long-term development plan.
-
-The current infrastructure direction includes **Oracle Cloud Infrastructure (OCI)** for backend hosting and future application services.
-
-Deployment considerations include:
-
-* Secure environment configuration
-* Secret management
-* HTTPS
-* Database security
-* API security
-* Logging
-* Monitoring
-* Application maintenance
-* Secure deployment practices
-
-Cloud infrastructure will be introduced incrementally as the application reaches appropriate development milestones.
-
----
-
-## 🗄️ Database
-
-Database functionality is planned as the platform expands.
-
-Potential future functionality includes:
-
-* User accounts
-* Academy membership information
-* Training records
-* Communication features
-* Application data
-* AI-related application data
-
-Database access will be designed around appropriate authentication, authorization, validation, and least-privilege principles.
-
----
-
-## 📱 Future Development
-
-The web platform is intended to provide a foundation for future Silver Dragons Academy applications.
-
-Potential future functionality includes:
-
-### Silver Dragons Online
-
-A future mobile/online training platform could provide:
-
-* Training videos
-* Online learning
-* Rank-test preparation
-* Training resources
-* Progress tracking
-* Certificates
-* Community features
-
-### Mobile Application
-
-A future mobile application may use:
-
-* React Native
-* TypeScript
-* Django backend services
-* Authentication
-* Role-based access control
-* Multi-factor authentication
-* Secure API communication
-
-The mobile platform will be developed after the core web platform and backend architecture have matured.
-
----
-
-## 🥋 Silver Dragons Academy
-
-The technology platform supports the broader mission of Silver Dragons Academy.
-
-The academy's founding martial arts program is Taekwondo, with an emphasis on:
-
-* Discipline
-* Fitness
-* Confidence
-* Coordination
-* Respect
-* Perseverance
-* Self-control
-* Practical self-defense
-* Character development
-
-Future programs may expand the academy's martial arts and educational offerings.
-
----
-
-## 🎯 Development Goals
-
-The project is being developed with several long-term goals:
-
-### 1. Build a Real Application
-
-The platform is intended to become a functional technology platform for Silver Dragons Academy rather than simply a demonstration project.
-
-### 2. Learn Secure Software Development
-
-Security is incorporated into development, testing, architecture, and deployment decisions.
-
-### 3. Develop Application Security Skills
-
-The project provides a controlled environment for studying:
-
-* Vulnerability prevention
-* Security testing
-* Secure API design
-* AI security
-* Authentication
-* Authorization
-* Cloud security
-* Software maintenance
-
-### 4. Practice Software Engineering
-
-The project provides practical experience with:
-
-* Version control
-* Application architecture
-* Backend development
-* Frontend development
-* API design
-* Automated testing
-* Debugging
-* Documentation
-* Deployment
-
----
-
-## 🚧 Current Development Status
-
-| Component                    | Status                |
-| ---------------------------- | --------------------- |
-| React frontend               | 🚧 Active development |
-| TypeScript                   | 🚧 Active development |
-| Tailwind CSS                 | 🚧 Active development |
-| Django backend               | 🚧 Active development |
-| Python API                   | 🚧 Active development |
-| Silvia AI assistant          | 🚧 Active development |
-| Application security testing | 🚧 Active development |
-| AI security testing          | 🚧 Active development |
-| Database                     | 📋 Planned/expanding  |
-| Oracle Cloud deployment      | 📋 Planned            |
-| Mobile application           | 🔮 Future             |
-
----
-
-## 🧰 Technology Stack
-
-### Frontend
-
-* React
-* TypeScript
-* Vite
-* Tailwind CSS
-
-### Backend
-
-* Python
-* Django
-
-### Development & Testing
-
-* Git
-* GitHub
-* Python testing tools
-* Django testing framework
-
-### Cloud
-
-* Oracle Cloud Infrastructure
-
-### Security Focus
-
-* Application Security
-* API Security
-* AI Security
-* Secure Software Development
-* Cloud Security
-* Software Testing
-
----
-
-## 🚀 Getting Started
-
-### Frontend
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Start the development server:
-
-```bash
-npm run dev
-```
-
-The frontend should then be available at:
-
-```text
-http://localhost:5173
-```
-
-### Django Backend
-
-Navigate to the Django backend:
-
-```bash
+<pre>
 cd silver-dragons-api-django
-```
+</pre>
 
-Create and activate a Python virtual environment:
+<p>Create a Python virtual environment:</p>
 
-### Windows
-
-```powershell
+<pre>
 python -m venv .venv
+</pre>
+
+<p>Activate the environment on Windows PowerShell:</p>
+
+<pre>
 .\.venv\Scripts\Activate.ps1
-```
+</pre>
 
-Install project dependencies:
+<p>Install the backend dependencies:</p>
 
-```bash
-pip install -r requirements.txt
-```
+<pre>
+python -m pip install -r requirements.txt
+</pre>
 
-Run Django's system checks:
+<p>Check the Django configuration:</p>
 
-```bash
+<pre>
 python manage.py check
-```
+</pre>
 
-Start the development server:
+<p>Start the development server:</p>
 
-```bash
+<pre>
 python manage.py runserver
-```
+</pre>
 
-The backend should then be available at:
+<p>The backend should be available at:</p>
 
-```text
-http://127.0.0.1:8000
-```
+<pre>
+http://127.0.0.1:8000/
+</pre>
 
----
+<h3>2. Configure the Frontend</h3>
 
-## 🧪 Running Tests
+<p>
+  Create or update the frontend's local <code>.env</code> file:
+</p>
 
-From the Django backend directory:
+<pre>
+VITE_SILVIA_API_URL=http://127.0.0.1:8000/api/chat
+</pre>
 
-```bash
-python manage.py test
-```
+<p>
+  Restart the Vite development server after changing environment variables.
+  Do not commit local environment files containing sensitive configuration.
+</p>
 
-Additional testing will be added as the application grows.
+<h3>3. Start the Frontend</h3>
 
-Security-oriented tests are intended to verify that the application behaves safely when presented with invalid, unexpected, or potentially malicious input.
+<p>From the frontend project directory, install dependencies:</p>
 
----
+<pre>
+npm install
+</pre>
 
-## 🔒 Security Notice
+<p>Start the Vite development server:</p>
 
-This project is an actively developed application and should not be considered production-ready solely because individual security controls or tests have been implemented.
+<pre>
+npm run dev
+</pre>
 
-Security testing cannot guarantee that an application contains no vulnerabilities.
+<p>The frontend should be available at:</p>
 
-The project is continuously being evaluated and improved as new functionality is introduced.
+<pre>
+http://localhost:5173
+</pre>
 
----
+<h3>4. Verify the Chatbot Integration</h3>
 
-## 📚 Learning Through Development
+<ol>
+  <li>Start both the Django and frontend development servers.</li>
+  <li>Open the website in a browser.</li>
+  <li>Navigate to the Silvia chatbot.</li>
+  <li>Submit a question supported by the chatbot.</li>
+  <li>Verify that the request reaches the Django API.</li>
+  <li>Confirm that the response appears in the chat interface.</li>
+</ol>
 
-One of the primary purposes of this project is practical learning.
+<h2>Development Philosophy</h2>
 
-Instead of building isolated demonstration applications, the development process uses a real project to explore:
+<p>
+  The project follows an incremental software engineering approach:
+</p>
 
-```text
-Software Engineering
-        ↓
-Backend Development
-        ↓
-API Development
-        ↓
-Software Testing
-        ↓
-Application Security
-        ↓
-AI Security
-        ↓
-Cloud Security
-        ↓
-Secure Deployment
-        ↓
-Long-Term Maintenance
-```
+<ol>
+  <li>Implement website functionality.</li>
+  <li>Develop and maintain the Django backend.</li>
+  <li>Integrate frontend features with the REST API.</li>
+  <li>Test normal and unexpected inputs.</li>
+  <li>Evaluate security risks and relevant safeguards.</li>
+  <li>Improve documentation and maintainability.</li>
+</ol>
 
-This approach allows new concepts to be studied and immediately applied to an evolving application.
+<p>
+  Security and testing are considered throughout development rather than
+  treated exclusively as final steps.
+</p>
 
----
+<h2>Current Project Scope</h2>
 
-## 📄 License
+<table>
+  <thead>
+    <tr>
+      <th>Component</th>
+      <th>Scope</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>React website</td>
+      <td>Included</td>
+    </tr>
+    <tr>
+      <td>TypeScript frontend</td>
+      <td>Included</td>
+    </tr>
+    <tr>
+      <td>Tailwind CSS</td>
+      <td>Included</td>
+    </tr>
+    <tr>
+      <td>Python and Django backend</td>
+      <td>Included</td>
+    </tr>
+    <tr>
+      <td>Django REST API</td>
+      <td>Included</td>
+    </tr>
+    <tr>
+      <td>Silvia chatbot</td>
+      <td>Included</td>
+    </tr>
+    <tr>
+      <td>Frontend/API integration</td>
+      <td>Included</td>
+    </tr>
+    <tr>
+      <td>Local development</td>
+      <td>Included</td>
+    </tr>
+   
+  </tbody>
+</table>
 
-License information will be added as the project reaches its appropriate release stage.
+<p>
+  The current project focuses on the website and its chatbot integration.
+  It does not include plans for a mobile application, cloud deployment,
+  or new database-backed functionality.
+</p>
 
----
+<h2>Silver Dragons Academy</h2>
 
-## 👤 Maintainer
+<p>
+  The website supports the mission of Silver Dragons Academy: helping students
+  develop skills and habits that extend beyond martial arts training.
+</p>
 
-**Gary Collins**
+<p>The academy's Taekwondo program emphasizes:</p>
 
-Silver Dragons Academy
+<ul>
+  <li>Discipline</li>
+  <li>Confidence</li>
+  <li>Fitness</li>
+  <li>Coordination</li>
+  <li>Respect</li>
+  <li>Perseverance</li>
+  <li>Self-control</li>
+  <li>Practical self-defense</li>
+  <li>Character development</li>
+</ul>
 
-The project is independently developed as part of the ongoing development of Silver Dragons Academy and as a practical software engineering and application-security learning project.
+<h1>Screenshots of the Silver Dragons Academy Web App</h1>
+
+<img width="1265" height="563" alt="Screenshot 2026-10-18 005719" src="https://github.com/user-attachments/assets/746d9aa7-b519-4fed-8e5f-a0690abcd576" />
+<img width="1254" height="629" alt="Screenshot 2026-10-18 004951" src="https://github.com/user-attachments/assets/52e3e29f-d69b-4449-82e7-4906acc9999d" />
+<img width="1257" height="700" alt="Screenshot 2026-10-18 005035" src="https://github.com/user-attachments/assets/26378a94-4a7e-4d26-9cb3-dfc6372a5ce5" />
+<img width="1264" height="700" alt="Screenshot 2026-10-18 005128" src="https://github.com/user-attachments/assets/8759f44e-c5da-483b-a786-d7546c92b545" />
+<img width="1262" height="702" alt="Screenshot 2026-10-18 005053" src="https://github.com/user-attachments/assets/9a03b4f6-7bf5-40e6-a596-082880f247f3" />
+<img width="342" height="413" alt="Screenshot 2026-10-18 002457" src="https://github.com/user-attachments/assets/610be5aa-3471-4fe0-8705-949b63eb3ba5" />
+
+
+
+
+
+
+
+<hr>
+
+<div align="center">
+  <p><strong>Maintained by Gary Collins</strong></p>
+  <p>Silver Dragons Academy Web Platform</p>
+  <p>Full-Stack Development · REST API Integration · Application Security</p>
+</div>
